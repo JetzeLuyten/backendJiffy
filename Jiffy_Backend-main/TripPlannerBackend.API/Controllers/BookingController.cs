@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace JiffyBackend.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/api/booking")]
     [ApiController]
     public class BookingController : ControllerBase
     {

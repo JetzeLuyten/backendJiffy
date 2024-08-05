@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.OpenApi.Models;
 using JiffyBackend.DAL;
 using JiffyBackend.DAL.Initializer;
@@ -16,6 +17,7 @@ builder.Services.AddAutoMapper(typeof(Program));
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<JiffyDbContext>(options =>
     options.UseSqlServer(connectionString));
+builder.Services.AddSwaggerGen();
 
 // Configure authentication
 builder.Services.AddAuthentication(options =>
@@ -50,11 +52,6 @@ builder.Services.AddControllers().AddJsonOptions(options =>
     options.JsonSerializerOptions.WriteIndented = true; // Optional: for pretty-printing
 });
 
-// Configure Swagger
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Jiffy API", Version = "v1" });
-});
 
 
 // Configure CORS
@@ -63,7 +60,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigin",
         builder =>
         {
-            builder.WithOrigins("http://localhost:5878") // Use the correct URL here
+            builder.WithOrigins("https://jiffyservice.netlify.app") // Use the correct URL here
                    .AllowAnyHeader()
                    .AllowAnyMethod();
         });

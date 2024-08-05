@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using JiffyBackend.DAL.Entity;
 
 namespace JiffyBackend.DAL

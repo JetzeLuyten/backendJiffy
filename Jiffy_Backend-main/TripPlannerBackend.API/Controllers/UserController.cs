@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace JiffyBackend.API.Controllers
 {
+    [Route("/api/user")]
+    [ApiController]
     public class UserController : Controller
     {
         private readonly JiffyDbContext _context;

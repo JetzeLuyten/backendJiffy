@@ -10,7 +10,7 @@ using JiffyBackend.API.Dto;
 
 namespace JiffyBackend.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/api/serviceType")]
     [ApiController]
     public class ServiceTypeController : ControllerBase
     {
