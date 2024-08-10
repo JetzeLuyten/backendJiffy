@@ -96,7 +96,8 @@ namespace JiffyBackend.API.Controllers
                 Description = createServiceDto.Description,
                 ServiceTypeId = createServiceDto.ServiceTypeId,
                 User = user,
-                PublishDate = createServiceDto.PublishDate
+                PublishDate = createServiceDto.PublishDate,
+                Price = createServiceDto.Price,
             };
             service.User = user;
 
