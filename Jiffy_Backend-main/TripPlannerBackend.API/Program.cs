@@ -60,8 +60,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigin",
         builder =>
         {
-            builder//.WithOrigins("https://jiffyservices.netlify.app") // Use the correct URL here
-                   .AllowAnyOrigin()
+            builder.WithOrigins("https://jiffyservices.netlify.app") // Use the correct URL here
+                   //.AllowAnyOrigin()
                    .AllowAnyHeader()
                    .AllowAnyMethod();
         });

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace JiffyBackend.API.Controllers
 {
-    [Route("/api/user")]
+    [Route("/user")]
     [ApiController]
     public class UserController : Controller
     {
