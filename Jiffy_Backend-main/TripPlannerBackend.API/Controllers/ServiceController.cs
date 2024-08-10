@@ -9,7 +9,7 @@ using JiffyBackend.DAL.Entity;
 
 namespace JiffyBackend.API.Controllers
 {
-    [Route("/api/service")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ServiceController : ControllerBase
     {
